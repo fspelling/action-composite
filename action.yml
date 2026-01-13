@@ -15,7 +15,7 @@ outputs:
   comment_id:
     description: "ID do comentário adicionado"
     value: ${{ steps.comment-action.outputs.comment-id }}
-run:
+runs:
   using: "composite"
   steps:
     - name: Adicionando comentário
@@ -44,5 +44,6 @@ run:
         # Define o output com o ID do comentário
 
         echo "comment-id=$(echo $comment_id)" >> $GITHUB_OUTPUT
+
 
         echo "Comentário adicionado com sucesso! ID do comentário: $comment_id"
